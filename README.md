@@ -49,3 +49,10 @@ And in _form of index job
   <%= f.collection_select :category_id, Category.all, :id, :name, {promt: "Choose a category"} %>
 </div>
 ```
+
+Add strong params at controller jobs
+```
+def announce_params
+  params.require(:job).permit(:title, :category_id)
+end
+ ```
